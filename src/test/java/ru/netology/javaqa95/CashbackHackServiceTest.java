@@ -1,32 +1,32 @@
 package ru.netology.javaqa95;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.Assert.assertEquals;
 
-class CashbackHackServiceTest {
+public class CashbackHackServiceTest {
 
     @Test
     public void calcBonusTest() {
         CashbackHackService service = new CashbackHackService();
-       assertEquals(400, service.remain(600));
+        assertEquals(service.remain(600), 400);
     }
 
     @Test
     public void testIfBonusEquals0() {
         CashbackHackService service = new CashbackHackService();
-        assertEquals(1000, service.remain(0));
+        assertEquals(service.remain(0), 1000);
     }
+
     @Test
     public void testIfBonusMore1000() {
         CashbackHackService service = new CashbackHackService();
-        assertEquals(800, service.remain(1200));
+        assertEquals(service.remain(1200), 800);
     }
 
     @Test
     public void testIfBonusEquals1000() {
         CashbackHackService service = new CashbackHackService();
-        assertEquals(0, service.remain(1000));
+        assertEquals(service.remain(1000), 0);
     }
 }
