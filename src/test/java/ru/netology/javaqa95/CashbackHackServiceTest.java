@@ -14,18 +14,18 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    public void testIfBonusThen1000() {
+    public void testIfBonusEquals0() {
         CashbackHackService service = new CashbackHackService();
         assertEquals(1000, service.remain(0));
     }
     @Test
-    public void test3() {
+    public void testIfBonusMore1000() {
         CashbackHackService service = new CashbackHackService();
         assertEquals(800, service.remain(1200));
     }
 
     @Test
-    public void test4() {
+    public void testIfBonusEquals1000() {
         CashbackHackService service = new CashbackHackService();
         assertEquals(0, service.remain(1000));
     }
